@@ -34,7 +34,7 @@
 ### 📦 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/argus.git
+git clone https://github.com/DavidBab/Argus.git
 cd Argus
 ```
 
