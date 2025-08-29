@@ -16,6 +16,8 @@
 
 **Argus** is a fast, modular, and flexible tool designed for reconnaissance and information gathering. Whether you're mapping out a target's directories, hunting for subdomains, or retrieving DNS records like `A`, `AAAA`, `CNAME`, `MX`, and more — **Argus** has your back.
 
+<br>
+
 ### ✨ Features
 
 - 🌐 Subdomain Enumeration 
@@ -25,7 +27,7 @@
 - ⚡ Fast and lightweight
 - 💾 Output to file support
 
-
+<br>
 
 ## ⚙️ Installation
 
@@ -62,7 +64,7 @@ Now you can simply run:
 argus -h
 ```
 
-
+<br>
 
 ## 🚀 Usage
 
@@ -74,7 +76,7 @@ argus [action] example.com [options]
 
 <img width="869" height="297" alt="Screenshot 2025-08-29 at 19 07 46" src="https://github.com/user-attachments/assets/c9ca7cf1-ec0b-4c4b-9bec-524c1e3c7ab8" />
 
-
+<br>
 
 ## 🤝 Contributing
 
@@ -91,14 +93,14 @@ Please follow best practices and include clear commit messages.
 
 > For major changes, open an issue first to discuss what you'd like to change.
 
-
+<br>
 
 ## 📄 License
 
 This project is licensed under the **MIT License**.  
 See the [LICENSE](LICENSE) file for more details.
 
-
+<br>
 
 ## 🙏 Credits
 
@@ -106,7 +108,7 @@ See the [LICENSE](LICENSE) file for more details.
 - Built with ❤️ using Python 3
 - Special thanks to the open-source community
 
-
+<br>
 
 ## 📬 Support
 
