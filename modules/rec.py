@@ -9,14 +9,14 @@ RESET = "\033[0m"
 def dns_records(target_domain, rec_type = None):
     record_types = ["A", "AAAA", "CNAME", "MX", "TXT", "SOA"]
     resolver = dns.resolver.Resolver()
+   
+    for rec_type in record_types:
+        dns_check(domain=target_domain, record=rec_type, resolver=resolver)
 
-    if rec_type:
-        if rec_type == "all":
-            for rec_type in record_types:
-                dns_check(domain=target_domain, record=rec_type, resolver=resolver)
 
-        else:
-            dns_check(domain=target_domain, record=rec_type, resolver=resolver)
+def visualize(answer):
+    for data in answer:
+        print(f"{GREEN}[+]{RESET} {data}")
 
 
 def dns_check(domain, record, resolver):
@@ -30,8 +30,3 @@ def dns_check(domain, record, resolver):
 
     except Exception as e:
         print(f"An error occured: {e}")
-
-
-def visualize(answer):
-    for data in answer:
-        print(f"{GREEN}[+]{RESET} {data}")

@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+
+import argparse
+import modules.rec as dnsres
+import modules.dns as subdomenum
+import modules.dir as direnum
+
+
+logo = r"""
+   _____                             
+  /  _  \_______  ____  __ __  ______
+ /  /_\  \_  __ \/ ___\|  |  \/  ___/
+/    |    \  | \/ /_/  >  |  /\___ \ 
+\____|__  /__|  \___  /|____//____  >
+        \/     /_____/            \/ 
+"""
+
+def print_banner(mode, target, wordlist):
+    print(logo)
+    print(f" Mode      : {mode}")
+    print(f" Target    : {target}")
+    if wordlist:
+        print(f" Wordlist  : {wordlist}")
+    print("="*50)
+
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description=logo + "\nA versatile CLI tool for DNS record lookup, subdomain enumeration, and directory brute-forcing.\nSupports multi-threaded scanning and custom wordlists for efficient reconnaissance of web targets.",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument(
+        "mode",
+        choices=["rec", "dns", "dir"],
+        help="Choose operation: rec (record lookup), dns (subdomain enumeration), dir (directory enumeration)"
+    )
+    parser.add_argument(
+        "target",
+        help="Target domain or URL"
+    )
+    parser.add_argument(
+        "-w", "--wordlist",
+        help="Path to wordlist file (required for dns and dir modes)"
+    )
+    args = parser.parse_args()
+
+
+    print_banner(args.mode, args.target, args.wordlist)
+
+
+    if args.mode == "rec":
+        dnsres.dns_records(args.target)
+    elif args.mode in ["dns", "dir"]:
+        if not args.wordlist:
+            parser.error(f"--wordlist is required for {args.mode} mode.")
+        if args.mode == "dns":
+            subdomenum.subdomain_search(args.target, args.wordlist)
+        else:
+            direnum.dir_search(args.target, args.wordlist)
+  
+
+if __name__ == "__main__":
+    main()
+
+
+
+
