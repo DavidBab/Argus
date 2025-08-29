@@ -121,7 +121,7 @@ If you find this tool helpful, feel free to:
 
 ---
 
-## 📌 Disclaimer
+## Disclaimer
 
 This tool is intended for **educational and authorized security testing purposes only**.  
 **Do not** use Argus against systems without permission.  
