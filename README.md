@@ -77,6 +77,7 @@ argus [action] example.com [options]
 <img width="869" height="297" alt="Screenshot 2025-08-29 at 19 07 46" src="https://github.com/user-attachments/assets/c9ca7cf1-ec0b-4c4b-9bec-524c1e3c7ab8" />
 
 <br>
+<br>
 
 ## 🤝 Contributing
 
