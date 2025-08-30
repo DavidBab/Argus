@@ -6,7 +6,7 @@ RED = "\033[91m"
 CYAN = "\033[96m"
 RESET = "\033[0m"
 
-def dns_records(target_domain, rec_type = None):
+def dns_records(target_domain):
     record_types = ["A", "AAAA", "CNAME", "MX", "TXT", "SOA"]
     resolver = dns.resolver.Resolver()
    
@@ -22,11 +22,11 @@ def visualize(answer):
 def dns_check(domain, record, resolver):
     try:
         answer = resolver.resolve(domain, record)
-        print(f"{record} records for {domain}.")
+        print(f"{record} records for {domain}")
         visualize(answer=answer)
 
     except dns.resolver.NoAnswer:
-        print(f"{RED}[!]{RESET} Sorry, couldn't find any record for {record}.")
+        print(f"Sorry, couldn't find any record for {record}.")
 
     except Exception as e:
-        print(f"An error occured: {e}")
+        print(f"{e}")

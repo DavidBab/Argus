@@ -21,7 +21,8 @@ def print_banner(mode, target, wordlist):
     print(f" Target    : {target}")
     if wordlist:
         print(f" Wordlist  : {wordlist}")
-    print("="*50)
+    print("\n")
+    
 
 
 
@@ -43,6 +44,10 @@ def main():
         "-w", "--wordlist",
         help="Path to wordlist file (required for dns and dir modes)"
     )
+    parser.add_argument(
+        "-o", "--output",
+        help="File path to save discovered results (optional; prints to console if omitted)"
+    )
     args = parser.parse_args()
 
 
@@ -55,9 +60,9 @@ def main():
         if not args.wordlist:
             parser.error(f"--wordlist is required for {args.mode} mode.")
         if args.mode == "dns":
-            subdomenum.subdomain_search(args.target, args.wordlist)
+            subdomenum.subdomain_search(args.target, args.wordlist, output=args.output)
         else:
-            direnum.dir_search(args.target, args.wordlist)
+            direnum.dir_search(args.target, args.wordlist, output=args.output)
   
 
 if __name__ == "__main__":
